@@ -1,0 +1,35 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:vm="using:Minesweeper.ViewModels"
+             x:Class="Minesweeper.Views.SettingsView"
+             x:DataType="vm:SettingsViewModel">
+
+    <StackPanel Spacing="16" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="16">
+      <Grid ShowGridLines="False"
+            HorizontalAlignment="Center"
+            ColumnDefinitions="140, 60"
+            RowDefinitions="Auto, Auto, Auto">
+
+          <TextBlock Grid.Row="0" Grid.Column="0" Margin="10">Height</TextBlock>
+
+          <TextBox Grid.Row="0" Grid.Column="1" Margin="0 5" Text="{Binding HeightString}"/>
+
+          <TextBlock Grid.Row="1" Grid.Column="0" Margin="10">Width</TextBlock>
+          <TextBox Grid.Row="1" Grid.Column="1" Margin="0 5" Text="{Binding WidthString}"/>
+
+          <TextBlock Grid.Row="2" Grid.Column="0" Margin="10">Number of mines</TextBlock>
+          <TextBox Grid.Row="2" Grid.Column="1" Margin="0 5" Text="{Binding MinesCountString}"/>
+      </Grid>
+
+      <Button Content="Start" 
+              Command="{Binding StartGameCommand}"
+              HorizontalAlignment="Center"
+              IsDefault="True"
+              Width="120"/>
+    </StackPanel>
+
+  
+</UserControl>
